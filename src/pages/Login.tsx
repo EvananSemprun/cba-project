@@ -1,6 +1,6 @@
-import { Card,  Title, Button, NumberInput, PasswordInput, Group } from '@mantine/core';
+import { Card, Title, Image, Button, NumberInput, PasswordInput, Group } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { motion } from 'framer-motion';
+import { IconLock, IconUser } from '@tabler/icons-react';
 
 function Login1() {
   const form = useForm({
@@ -17,42 +17,69 @@ function Login1() {
 
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '75vh' }}>
-      
-        <Card shadow="xl" padding="xl" radius="xl" withBorder w={550}>
-          <Title order={3} align="center" mb={45}>
-            Bienvenido
-          </Title>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '98vh',
+        background: `url(https://mapio.net/images-p/94320217.jpg)`,
+        backgroundSize: '85%',
+        backgroundPosition: 'right center'
+      }}
+    >
+      <Card
+        shadow="xl"
+        padding="xl"
+        radius="xs"
+        withBorder
+        w={550}
+        h={861}
+        style={{
+          marginRight: 'auto',
+        }}
+      >
+        <Image
+          maw={240}
+          mx="auto"
 
-          <form onSubmit={form.onSubmit((values) => console.log(values))}>
+          radius="md"
+          src="https://cba.edu.ve/images/cba.png"
+          alt="Logo" />
+        <Title order={1} align="center" mt={50} >
+          Bienvenido
+        </Title>
 
+        <form onSubmit={form.onSubmit((values) => console.log(values))}>
+          <NumberInput
+            placeholder="Usuario"
+            label="Usuario"
+            radius="xl"
+            mt={150}
+            mb={35}
+            {...form.getInputProps('user')}
+            hideControls
+            icon={<IconUser size="1rem" />}
+          />
 
+          <PasswordInput
+            placeholder="Contraseña"
+            label="Contraseña"
+            radius="xl"
+            {...form.getInputProps('password')}
+            icon={<IconLock size="1rem" />}
+          />
 
-            <NumberInput
-              placeholder="Usuario"
-              label="Usuario"
-              radius="xl"
-              mb={15}
-              {...form.getInputProps('user')}
-
-              hideControls
-            />
-
-
-            <PasswordInput
-              placeholder="Contraseña"
-              label="Contraseña"
-              radius="xl"
-              {...form.getInputProps('password')}
-            />
-
-            <Group position="center" mt={25}>
-              <Button color="indigo" type="submit">Enviar</Button>
-            </Group>
-          </form>
-        </Card>
-      
+          <Group position="center" mt={100}>
+            <Button color="indigo" w={502} type="submit">
+              Enviar
+            </Button>
+          </Group>
+        </form>
+      </Card>
     </div>
+
+
   );
 }
 
