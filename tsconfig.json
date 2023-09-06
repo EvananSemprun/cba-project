@@ -8,6 +8,10 @@
     "allowJs": true,
     "esModuleInterop": true,
     
+    /* Paths */
+    "paths": {
+      "@components/*" : ["./src/components/*"]
+    },
     
     /* Bundler mode */
     "moduleResolution": "bundler",

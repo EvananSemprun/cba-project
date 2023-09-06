@@ -1,86 +1,90 @@
-import { Card, Title, Image, Button, NumberInput, PasswordInput, Group } from '@mantine/core';
-import { useForm } from '@mantine/form';
-import { IconLock, IconUser } from '@tabler/icons-react';
+import {
+  Paper,
+  createStyles,
+  TextInput,
+  PasswordInput,
+  // Anchor,
+  // Text,
+  Checkbox,
+  Button,
+  Title,
+  rem,
+  Image
+} from '@mantine/core';
+import { useWindowSize } from "@uidotdev/usehooks";
 
-function Login1() {
-  const form = useForm({
-    initialValues: {
-      user: '',
-      password: '',
+function Login() {
+  const size = useWindowSize();
+
+  const useStyles = createStyles((theme) => ({
+    login: {
+      overflowY: 'hidden',
+      maxHeight: `calc(${size.height}px)`
     },
-
-    validate: {
-      user: (value) => (/^\S+@\S+$/.test(value) ? null : 'Usuario es requerido'),
-      password: (value) => (value.length >= 6 ? null : 'La contraseña es requerida'),
+  
+    wrapper: {
+      minHeight: `calc(${size.height}px)`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundImage:
+        'url(https://cba.edu.ve/images/bellasartes.jpg)',
+      backgroundPosition: "left"
     },
-  });
+  
+    form: {
+      borderRight: `${rem(1)} solid ${
+        theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
+      }`,
+      minHeight: `calc(${size.height}px)`,
+      maxWidth: rem(450),
+      paddingTop: rem(80),
+  
+      [theme.fn.smallerThan('sm')]: {
+        maxWidth: '100%',
+      },
+    },
+  
+    title: {
+      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    },
+  }));
 
+  const { classes } = useStyles();
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '98vh',
-        background: `url(https://mapio.net/images-p/94320217.jpg)`,
-        backgroundSize: '85%',
-        backgroundPosition: 'right center'
-      }}
-    >
-      <Card
-        shadow="xl"
-        padding="xl"
-        radius="xs"
-        withBorder
-        w={550}
-        h={861}
-        style={{
-          marginRight: 'auto',
-        }}
-      >
-        <Image
-          maw={240}
-          mx="auto"
+    <section className={classes.login}>
+      <div className={classes.wrapper}>
+        <Paper className={classes.form} radius={0} p={30}>
+          <Image
+            maw={240}
+            mx="auto"
 
-          radius="md"
-          src="https://cba.edu.ve/images/cba.png"
-          alt="Logo" />
-        <Title order={1} align="center" mt={50} >
-          Bienvenido
-        </Title>
-
-        <form onSubmit={form.onSubmit((values) => console.log(values))}>
-          <NumberInput
-            placeholder="Usuario"
-            label="Usuario"
-            radius="xl"
-            mt={150}
-            mb={35}
-            {...form.getInputProps('user')}
-            hideControls
-            icon={<IconUser size="1rem" />}
+            radius="md"
+            src="https://cba.edu.ve/images/cba.png"
+            alt="Logo" 
           />
+          
+          <Title order={2} className={classes.title} ta="center" mt="md" mb={50}>
+            Colegio Bellas Artes
+          </Title>
 
-          <PasswordInput
-            placeholder="Contraseña"
-            label="Contraseña"
-            radius="xl"
-            {...form.getInputProps('password')}
-            icon={<IconLock size="1rem" />}
-          />
+          <TextInput label="Correo" placeholder="estudiante@bellasartes.com" size="md" />
+          <PasswordInput label="Contraseña" placeholder="********" mt="md" size="md" />
+          <Checkbox label="Mantener sesión" mt="xl" size="md" />
+          <Button fullWidth mt="xl" size="md">
+            Entrar
+          </Button>
 
-          <Group position="center" mt={100}>
-            <Button color="indigo" w={502} type="submit">
-              Enviar
-            </Button>
-          </Group>
-        </form>
-      </Card>
-    </div>
-
-
+          {/* <Text ta="center" mt="md">
+            ¿Olvidaste tu contraseña?{' '}
+            <Anchor<'a'> href="#" weight={700} onClick={(event) => event.preventDefault()}>
+              Presiona aquí
+            </Anchor>
+          </Text> */}
+        </Paper>
+      </div>
+    </section>
   );
 }
-
-export default Login1;
+export default Login;
