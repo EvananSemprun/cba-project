@@ -3,8 +3,6 @@ import {
   createStyles,
   TextInput,
   PasswordInput,
-  // Anchor,
-  // Text,
   Checkbox,
   Button,
   Title,
@@ -21,7 +19,7 @@ function Login() {
       overflowY: 'hidden',
       maxHeight: `calc(${size.height}px)`
     },
-  
+
     wrapper: {
       minHeight: `calc(${size.height}px)`,
       backgroundSize: 'cover',
@@ -30,20 +28,19 @@ function Login() {
         'url(https://cba.edu.ve/images/bellasartes.jpg)',
       backgroundPosition: "left"
     },
-  
+
     form: {
-      borderRight: `${rem(1)} solid ${
-        theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
-      }`,
+      borderRight: `${rem(1)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
+        }`,
       minHeight: `calc(${size.height}px)`,
       maxWidth: rem(450),
       paddingTop: rem(80),
-  
+
       [theme.fn.smallerThan('sm')]: {
         maxWidth: '100%',
       },
     },
-  
+
     title: {
       color: theme.colorScheme === 'dark' ? theme.white : theme.black,
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -62,9 +59,9 @@ function Login() {
 
             radius="md"
             src="https://cba.edu.ve/images/cba.png"
-            alt="Logo" 
+            alt="Logo"
           />
-          
+
           <Title order={2} className={classes.title} ta="center" mt="md" mb={50}>
             Colegio Bellas Artes
           </Title>
@@ -72,9 +69,12 @@ function Login() {
           <TextInput label="Correo" placeholder="estudiante@bellasartes.com" size="md" />
           <PasswordInput label="Contraseña" placeholder="********" mt="md" size="md" />
           <Checkbox label="Mantener sesión" mt="xl" size="md" />
-          <Button fullWidth mt="xl" size="md">
-            Entrar
-          </Button>
+          <a href="/HomeStudent">
+            <Button fullWidth mt="xl" size="md">
+              Entrar
+            </Button>
+          </a>
+
 
           {/* <Text ta="center" mt="md">
             ¿Olvidaste tu contraseña?{' '}
