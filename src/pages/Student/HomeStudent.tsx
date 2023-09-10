@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar";
-import { Card, Title, Text, Button, Grid, Group, } from '@mantine/core';
+import { Card, Title, Group, } from '@mantine/core';
 import { motion } from 'framer-motion';
 
 const jsonData = [
