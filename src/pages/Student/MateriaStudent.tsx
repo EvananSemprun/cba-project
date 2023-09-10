@@ -60,7 +60,7 @@ function MateriaStudent() {
                             </Card>
 
                             <Card mt={15} h={135} w={755} shadow="sm" padding="lg" radius="md" withBorder >
-                                <a href="/HomeStudent" style={{ textDecoration: "none", color: "inherit" }}>
+                                <a href="/ThemeStudent" style={{ textDecoration: "none", color: "inherit" }}>
                                     <Group position="apart" >
 
                                         <Group >
@@ -94,7 +94,7 @@ function MateriaStudent() {
                             </Card>
 
                             <Card mt={15} h={135} w={755} shadow="sm" padding="lg" radius="md" withBorder >
-                                <a href="/HomeStudent" style={{ textDecoration: "none", color: "inherit" }}>
+                                <a href="/ThemeStudent" style={{ textDecoration: "none", color: "inherit" }}>
                                     <Group position="apart" >
 
                                         <Group >
