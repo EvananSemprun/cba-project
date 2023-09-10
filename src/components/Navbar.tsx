@@ -4,7 +4,6 @@ import {
   Title,
   ActionIcon
 } from '@mantine/core';
-
 import { IconUser,IconMenu2  } from '@tabler/icons-react';
 
 function Navbar() {

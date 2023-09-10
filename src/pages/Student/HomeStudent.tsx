@@ -2,93 +2,63 @@ import Navbar from "../../components/Navbar";
 import { Card, Title, Text, Button, Grid, Group, } from '@mantine/core';
 import { motion } from 'framer-motion';
 
-
 const jsonData = [
-    {
-        "nombre": "Matematica",
-        "ruta": "#",
-        "Profesor": "Jose gonzalez",
+  {
+    "nombre": "Matematica",
+    "ruta": "#",
+    "Profesor": "Jose gonzalez",
 
-    }, {
-        "nombre": "Fisica",
-        "ruta": "#",
-        "Profesor": "Jose gonzalez",
+  }, {
+    "nombre": "Fisica",
+    "ruta": "#",
+    "Profesor": "Jose gonzalez",
 
-    }, {
-        "nombre": "Quimica",
-        "ruta": "#",
-        "Profesor": "Jose gonzalez",
+  }, {
+    "nombre": "Quimica",
+    "ruta": "#",
+    "Profesor": "Jose gonzalez",
 
-    },
-    {
-        "nombre": "Historia",
-        "ruta": "#",
-        "Profesor": "Jose gonzalez",
+  },
+  {
+    "nombre": "Historia",
+    "ruta": "#",
+    "Profesor": "Jose gonzalez",
 
-    }
+  }
 ];
+
 function HomeStudent() {
+  return (
+    <>
+      <Navbar />
+      <Card h='calc(100vh - 92px)' bg='red' mx={10}>
+      <Title mb={15} align="center" order={1}>
+        Materias cursadas
+      </Title>
+      <Group position="center">
+        {jsonData.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.01 }} 
+            transition={{ duration: 0.5 }} 
+            style={{ width: '80%', display: 'flex', justifyContent: 'center' }}
+          >
+            <Card
+              mt={25}
+              withBorder
+              mb={2}
+              style={{ width: '100%' }}
+            >
 
-
-
-
-
-
-
-    return (
-        <>
-            <Navbar />
-            <Title mb={15} align="center" order={1}>
-               Materias cursadas
-            </Title>
-
-
-
-            <Grid gutter="lg" style={{ justifyContent: 'center' }}>
-                {jsonData.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.5 }} // Animación inicial
-                        animate={{ opacity: 1, scale: 1 }} // Animación al cargar
-                        whileHover={{ scale: 1.2 }} // Animación al hacer hover
-                        transition={{ duration: 0.5 }} // Duración de la animación
-                        style={{ minWidth: '250px', maxWidth: '400px' }}
-                    >
-                        <Card
-                            mt={25}
-                            shadow="xl"
-                            padding="lg"
-                            mb={2}
-                            ml={35}
-                            mr={35}
-                            style={{ width: '85%' }}
-                        >
-
-                            <Title fz={25} mb={15} align="center" order={1}>
-                                {item.nombre}
-                            </Title>
-                            <Group position="apart" mb={15}>
-
-                                <Text variant="h4" >
-                                    Profesor :
-                                </Text>
-
-                                <Text variant="h4" >
-                                    {item.Profesor}
-                                </Text>
-
-                            </Group>
-                            <Group position="center">
-
-                                <Button component="a" href={item.ruta}  >
-                                    Entrar
-                                </Button>
-                            </Group>
-                        </Card>
-                    </motion.div>
-                ))}
-            </Grid>
-        </>
-    );
+            </Card>
+          </motion.div>
+        ))}
+        </Group>
+      </Card>
+    </>
+  );
 }
+
 export default HomeStudent;
