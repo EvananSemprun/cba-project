@@ -1,7 +1,7 @@
 
 import { Card, Title, } from '@mantine/core';
 import Cardm from '../../components/CardMaterial'
-
+import { motion } from 'framer-motion';
 function HomeStudent() {
   return (
     <>

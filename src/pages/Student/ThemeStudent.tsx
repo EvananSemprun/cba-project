@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+
 import { Card, Badge, ScrollArea, Divider, Title, Tabs, Group } from '@mantine/core';
 function ThemeStudent() {
 
