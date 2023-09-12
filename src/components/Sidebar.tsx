@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react"
-import { Navbar } from "@mantine/core"
+import { Navbar, Text } from "@mantine/core"
 import actionCable from 'actioncable'
 
 interface ILinks {
@@ -30,7 +30,7 @@ function Sidebar() {
           access_token: localStorage.getItem('token')
         },
         {
-          received: (message: ILinks) => {
+          received: (message: ILinks[]) => {
             console.log("Yeeey :D")
             console.log(message);
           },
@@ -42,14 +42,13 @@ function Sidebar() {
 
   return (
     <Navbar 
-      width={{ base: 200 }} 
+      width={{ base: 230 }} 
       withBorder={false} 
       height="100%" 
       bg="#0E111E" 
       p="xs"
       hidden={isVisible()}
     >
-
     </Navbar>
   )
 }

@@ -12,7 +12,6 @@ function ThemeStudent() {
       <Card ml={15} mr={15} mt={45} h={755} shadow="sm" padding="lg" radius="lg" withBorder>
         hola
       </Card>
-
     </>
   );
 }

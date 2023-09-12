@@ -4,14 +4,15 @@ import Login from './pages/Login';
 import HomeStudent from './pages/Student/HomeStudent';
 import MateriaStudent from './pages/Student/MateriaStudent';
 import ThemeStudent from './pages/Student/ThemeStudent';
-import { AppShell, Card, Header, Navbar } from '@mantine/core';
+import { AppShell, Card, Header } from '@mantine/core';
+import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <AppShell
       navbar={<Sidebar />}
-      header={<Header height={60} p="xs" withBorder={false} bg="#0E111E">A</Header>}
+      header={<Navbar />}
       bg="#0E111E"
     >
       <BrowserRouter>
