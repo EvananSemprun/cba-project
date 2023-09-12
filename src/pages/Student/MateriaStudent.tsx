@@ -40,9 +40,9 @@ function MateriaStudent() {
       </Group>
       
       <Card className={classes.containerCard} w="100%" h="96%" style={{ borderRadius: '15px 0 0 15px' }}>
-        <Activitylist color="#FF6961" title="Examen" /> 
-        <Activitylist color="#84B6F4" title="Tarea" /> 
-        <Activitylist color="#A8CA7E" title="Tema" /> 
+        <Activitylist color="#FF6961" note="15/20 pts" state="no entregado" title="Examen" /> 
+        <Activitylist color="#84B6F4" note="15/20 pts" state="Entragado" title="Tarea" /> 
+        <Activitylist color="#A8CA7E"  note="15/20 pts" state="no entregado" title="Tema" /> 
       </Card>
 
     </>

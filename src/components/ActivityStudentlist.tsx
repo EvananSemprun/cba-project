@@ -3,13 +3,15 @@ import { Card, Badge, Text, Grid, Title } from '@mantine/core';
 interface ActivityStudentlistProps {
   color: string;
   title: string;
+  note: string;
+  state: string;
 }
 
 
 
 
 
-function ActivityStudentlist({ color, title }: ActivityStudentlistProps) {
+function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistProps) {
   const titleStyle = {
     fontFamily: 'Montserrat, sans-serif',
   };
@@ -23,7 +25,7 @@ function ActivityStudentlist({ color, title }: ActivityStudentlistProps) {
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'left' }}>
                 <Title>
-                  {title} 
+                  {title}
                 </Title>
                 <Text c="#868E96" fz="sm">
                   disponible desde 02/02/2023 Hasta 03/03/2023
@@ -33,14 +35,22 @@ function ActivityStudentlist({ color, title }: ActivityStudentlistProps) {
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'center' }}>
                 <Title mt={15} >
-                  15/20 pts
+                  {note}
                 </Title>
               </div>
             </Grid.Col>
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'right' }}>
-                <Badge mt={25} size="lg" radius="xs" style={{ backgroundColor: "#ECEDFF"}}  c="#6A5CC0">
-                  No entregado
+                <Badge
+                  mt={title !== "Tema" ? 25 : 10}
+                  size="lg"
+                  radius="xs"
+                  style={{
+                    backgroundColor: state === "no entregado" ? "#ECEDFF" : "#D2F8E7",
+                    color:  state === "no entregado" ? "#6A5CC0" : "#6AB491",
+                  }}
+                >
+                  {state}
                 </Badge>
               </div>
             </Grid.Col>
@@ -57,20 +67,28 @@ function ActivityStudentlist({ color, title }: ActivityStudentlistProps) {
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'left' }}>
                 <Title>
-                  {title} 
+                  {title}
                 </Title>
-             
+
               </div>
             </Grid.Col>
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'center' }}>
-           
+
               </div>
             </Grid.Col>
             <Grid.Col xl={4} lg={4} md={12} sm={12}>
               <div style={{ textAlign: 'right' }}>
-                <Badge mt={10} size="lg" radius="xs" style={{ backgroundColor: "#ECEDFF"}}  c="#6A5CC0">
-                  No entregado
+                <Badge
+                  mt={title !== "Tema" ? 25 : 10}
+                  size="lg"
+                  radius="xs"
+                  style={{
+                    backgroundColor: state === "no entregado" ? "#ECEDFF" : "#A8CA7E",
+                    color:  state === "no entregado" ? "#6A5CC0" : "#6A5CC0",
+                  }}
+                >
+                  {state}
                 </Badge>
               </div>
             </Grid.Col>
