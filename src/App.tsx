@@ -13,7 +13,7 @@ function App() {
     <AppShell
       navbar={<Sidebar />}
       header={<Navbar />}
-      bg="#0E111E"
+      bg="#1e2541"
     >
       <BrowserRouter>
         <Routes>

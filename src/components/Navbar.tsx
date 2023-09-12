@@ -66,7 +66,7 @@ function Navbar() {
         height={80} 
         p="xs" 
         withBorder={false} 
-        bg="#0E111E"
+        bg="#1e2541"
       >
         <div className={classes.container}>
           <div className={classes.logoContainer}>

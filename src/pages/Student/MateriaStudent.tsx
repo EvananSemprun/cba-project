@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar";
-import { Card, Badge, ScrollArea, Divider, Title, Tabs, Group, useMantineTheme, Button, createStyles } from '@mantine/core';
-
+import { Card, Group, useMantineTheme, Button, createStyles } from '@mantine/core';
+import Activitylist from '../../components/ActivityStudentlist'
 function MateriaStudent() {
   const theme = useMantineTheme();
   const useStyles = createStyles((theme) => ({
@@ -32,8 +32,9 @@ function MateriaStudent() {
         <Button className={classes.tab_lapse_2}>Lapso 2</Button>
         <Button className={classes.tab_lapse_3}>Lapso 3</Button>
       </Group>
-      <Card className={classes.containerCard} mx={10}>
+      <Card className={classes.containerCard} w="100%" h="100%" style={{ borderRadius: '15px 0 0 15px' }}>
 
+        <Activitylist />
       </Card>
     </>
   );
