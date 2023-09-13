@@ -13,7 +13,7 @@ interface ActivityStudentlistProps {
 
 function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistProps) {
   const titleStyle = {
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: 'Montserrat',
   };
 
   if (title !== "Tema") {
@@ -60,7 +60,7 @@ function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistP
     );
   } else {
     return (
-      <a href="/HomeStudent" style={{ textDecoration: "none", color: "inherit" }}>
+      <a href="/ThemeStudent" style={{ textDecoration: "none", color: "inherit" }}>
         <Card mt={15} style={titleStyle} shadow="sm" radius="md" withBorder>
           <div style={{ backgroundColor: color, border: `2px solid ${color}`, width: "10px", height: "100%", position: "absolute", top: 0, left: 0 }}></div>
           <Grid>
@@ -84,8 +84,8 @@ function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistP
                   size="lg"
                   radius="xs"
                   style={{
-                    backgroundColor: state === "no entregado" ? "#ECEDFF" : "#A8CA7E",
-                    color:  state === "no entregado" ? "#6A5CC0" : "#6A5CC0",
+                    backgroundColor: state === "No revisado" ?  "#ECEDFF" : "#D2F8E7",
+                    color:  state === "No revisado" ?  "#6A5CC0" : "#6AB491",
                   }}
                 >
                   {state}
