@@ -45,7 +45,7 @@ function Sidebar() {
       width={{ base: 230 }} 
       withBorder={false} 
       height="100%" 
-      bg="#1e2541" 
+      bg="#0E111E" 
       p="xs"
       hidden={isVisible()}
     >

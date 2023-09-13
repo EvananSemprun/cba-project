@@ -7,13 +7,16 @@ import ThemeStudent from './pages/Student/ThemeStudent';
 import { AppShell, Card, Header } from '@mantine/core';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import { useWindowSize } from '@uidotdev/usehooks';
 
 function App() {
+  const size = useWindowSize();
+
   return (
     <AppShell
-      navbar={<Sidebar />}
+      navbar={Number(size.width) < 680 ? <></> : <Sidebar />}
       header={<Navbar />}
-      bg="#1e2541"
+      bg={Number(size.width) < 680 ? '#ffffff' : '#0E111E'}
     >
       <BrowserRouter>
         <Routes>
