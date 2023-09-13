@@ -1,5 +1,5 @@
-import { Card ,Title,createStyles} from '@mantine/core';
-
+import { Card ,Title,createStyles,Button} from '@mantine/core';
+import Themecontentstudent from '../../components/Themecontentstudent'
 function ThemeStudent() {
 
   const useStyles = createStyles((theme) => ({
@@ -26,15 +26,20 @@ function ThemeStudent() {
 
   const titleStyle = {
     fontFamily: 'Montserrat',
+    borderRadius: '15px 0 0 15px'
   };
 
   return (
     <>
-      <Card  style={titleStyle}  className={classes.containerCard} w="100%" h="100%" style={{ borderRadius: '15px 0 0 15px' }}>
+      <Card  style={titleStyle}  className={classes.containerCard} w="100%" h="100%">
       <Title  align="center">
         Tema: Nombre del tema
       </Title>
       
+      <Themecontentstudent/>
+      <Button mt={25} color="indigo" radius="xs">
+      Descargar contenido
+    </Button>
       </Card>
     </>
   );

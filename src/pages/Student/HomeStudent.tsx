@@ -11,9 +11,9 @@ function HomeStudent() {
           <Title mb={15} order={2} fw={500}>
             Mis Cursos
           </Title>
-          <Title mb={15} order={4} fw={500}>
+          {/* <Title mb={15} order={4} fw={500}>
             Ver todos <IconArrowRight style={{ paddingTop: 15 }}/>
-          </Title>
+          </Title> */}
         </Group>
        <Cardm/>
       </Card>
