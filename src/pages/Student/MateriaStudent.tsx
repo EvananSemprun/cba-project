@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar";
 import { Card, Group, Title, Button, createStyles } from '@mantine/core';
-import Activitylist from '../../components/ActivityStudentlist'
+import Activitylist from '../../components/Student/ActivityStudentlist'
 
 function MateriaStudent() {
 

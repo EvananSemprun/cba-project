@@ -4,7 +4,7 @@ import { } from "module";
 function Themecontentstudent() {
     return (
         <>
-            <ScrollArea h={750} offsetScrollbars scrollbarSize={8}>
+            <ScrollArea h={686} offsetScrollbars scrollbarSize={8}>
                 <Text mr={25} align='justify' fz="lg">
 
 

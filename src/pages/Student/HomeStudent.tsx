@@ -1,6 +1,6 @@
 
 import { Card, Group, Title, Text } from '@mantine/core';
-import Cardm from '../../components/CardMaterial'
+import Cardm from '../../components/Student/CardMaterial'
 import { motion } from 'framer-motion';
 import { IconArrowRight } from '@tabler/icons-react';
 function HomeStudent() {

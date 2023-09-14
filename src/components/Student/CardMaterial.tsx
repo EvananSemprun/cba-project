@@ -1,6 +1,6 @@
 import { Card, Title, Progress, Text, Group, ActionIcon } from '@mantine/core';
 import { motion } from 'framer-motion';
-import { IconArrowRight, IconBook, IconHexagonalPyramidPlus, IconMath, IconPlant, IconTypography } from '@tabler/icons-react';
+import { IconArrowRight, IconBook, IconHexagonalPyramidPlus, IconMath, IconPlant } from '@tabler/icons-react';
 
 const jsonData = [
 	{
