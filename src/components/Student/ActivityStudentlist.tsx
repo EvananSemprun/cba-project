@@ -5,20 +5,21 @@ interface ActivityStudentlistProps {
   title: string;
   note: string;
   state: string;
+  link: string;
 }
 
 
 
 
 
-function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistProps) {
+function ActivityStudentlist({ color,link, title, state, note }: ActivityStudentlistProps) {
   const titleStyle = {
     fontFamily: 'Montserrat',
   };
 
   if (title !== "Tema") {
     return (
-      <a href="/HomeStudent" style={{ textDecoration: "none", color: "inherit" }}>
+      <a href={link} style={{ textDecoration: "none", color: "inherit" }}>
         <Card mt={15} style={titleStyle} shadow="sm" radius="md" withBorder>
           <div style={{ backgroundColor: color, border: `2px solid ${color}`, width: "10px", height: "100%", position: "absolute", top: 0, left: 0 }}></div>
           <Grid>
@@ -60,7 +61,7 @@ function ActivityStudentlist({ color, title, state, note }: ActivityStudentlistP
     );
   } else {
     return (
-      <a href="/ThemeStudent" style={{ textDecoration: "none", color: "inherit" }}>
+      <a href={link} style={{ textDecoration: "none", color: "inherit" }}>
         <Card mt={15} style={titleStyle} shadow="sm" radius="md" withBorder>
           <div style={{ backgroundColor: color, border: `2px solid ${color}`, width: "10px", height: "100%", position: "absolute", top: 0, left: 0 }}></div>
           <Grid>
