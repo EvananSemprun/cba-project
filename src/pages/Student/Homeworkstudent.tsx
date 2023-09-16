@@ -16,19 +16,7 @@ function Homeworkstudent(props: Partial<DropzoneProps>) {
             borderRadius: '0 5px 5px 5px',
             height: 'calc(100vh - 128px)',
             backgroundColor: theme.colors.gray[0]
-        },
-        tab_lapse_1: {
-            borderRadius: '5px 0 0 0',
-            backgroundColor: theme.colors.light,
-        },
-        tab_lapse_2: {
-            borderRadius: '0 0 0 0',
-            backgroundColor: theme.colors.light,
-        },
-        tab_lapse_3: {
-            borderRadius: '0 5px 0 0',
-            backgroundColor: theme.colors.light,
-        },
+        }
     }));
 
     const { classes } = useStyles();
@@ -54,7 +42,7 @@ function Homeworkstudent(props: Partial<DropzoneProps>) {
                 </Text>
             </Modal>
 
-            <Modal opened={openedUpload} size="xl" onClose={closeu} withCloseButton={false}>
+            <Modal opened={openedUpload} size="xl"  radius="md"  onClose={closeu} withCloseButton={false}>
                 <Title align="center">
                     Subir tarea
                 </Title>

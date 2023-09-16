@@ -7,19 +7,8 @@ function ThemeStudent() {
       borderRadius: '0 5px 5px 5px',
       height: 'calc(100vh - 128px)',
       backgroundColor: theme.colors.gray[0]
-    },
-    tab_lapse_1: {
-      borderRadius: '5px 0 0 0',
-      backgroundColor: theme.colors.light,
-    },
-    tab_lapse_2: {
-      borderRadius: '0 0 0 0',
-      backgroundColor: theme.colors.light,
-    },
-    tab_lapse_3: {
-      borderRadius: '0 5px 0 0',
-      backgroundColor: theme.colors.light,
-    },
+    }
+    
   }));
 
   const { classes } = useStyles();
