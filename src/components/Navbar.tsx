@@ -98,7 +98,7 @@ function Navbar() {
               Buscar
             </Button>
           </div>
-          <Drawer size="15%"  opened={opened} onClose={toggle} position="right" >
+          <Drawer size="25vh"  opened={opened} onClose={toggle} position="right" >
 
           </Drawer>
           <Burger mt={15} color="white" opened={opened} onClick={toggle} aria-label={label} />
