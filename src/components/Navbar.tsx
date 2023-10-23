@@ -1,9 +1,13 @@
 import {
   Button,
-  Header, 
+  Header,
   Text,
   TextInput,
+  Drawer,
+  Group
 } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { Burger } from '@mantine/core';
 import { createStyles } from '@mantine/core';
 import { useWindowSize } from '@uidotdev/usehooks';
 
@@ -17,7 +21,7 @@ function Navbar() {
       height: '100%'
     },
     logoContainer: {
-      width: 235,
+      width: 256,
       height: '100%'
     },
     logo: {
@@ -31,7 +35,7 @@ function Navbar() {
     },
     searchBoxContainer: {
       marginTop: '15px',
-      width: 400,
+      width: 350,
       height: '100%'
     },
     searchBox: {
@@ -59,13 +63,14 @@ function Navbar() {
   }))
 
   const { classes } = useStyles();
-
+  const [opened, { toggle }] = useDisclosure(false);
+  const label = opened ? 'Close navigation' : 'Open navigation';
   return (
     <>
-      <Header 
-        height={80} 
-        p="xs" 
-        withBorder={false} 
+      <Header
+        height={80}
+        p="xs"
+        withBorder={false}
         bg="#0E111E"
       >
         <div className={classes.container}>
@@ -77,7 +82,7 @@ function Navbar() {
             </Text>
           </div>
           <div className={classes.searchBoxContainer}>
-            <TextInput 
+            <TextInput
               className={classes.searchBox}
               size='md'
               radius={6}
@@ -93,8 +98,14 @@ function Navbar() {
               Buscar
             </Button>
           </div>
+          <Drawer size="15%"  opened={opened} onClose={toggle} position="right" >
+
+          </Drawer>
+          <Burger mt={15} color="white" opened={opened} onClick={toggle} aria-label={label} />
+
         </div>
       </Header>
+
     </>
   )
 }

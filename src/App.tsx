@@ -33,6 +33,7 @@ function App() {
           <Route path="/Materialnotestudent" element={<Materialnotestudent/>} />
           <Route path="/Pendingactivitiesstudent" element={<Pendingactivitiesstudent/>} />
           <Route path="/Confistudent" element={<Confistudent/>} />
+          <Route path="/" element={<HomeStudent/>} />
         </Routes>
       </BrowserRouter>
     </AppShell>

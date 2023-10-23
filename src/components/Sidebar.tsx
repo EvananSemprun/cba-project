@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useState } from "react"
 import { Navbar, Text } from "@mantine/core"
+import { useDisclosure } from '@mantine/hooks';
+import { Drawer, Button, Group } from '@mantine/core';
 import actionCable from 'actioncable'
 
 interface ILinks {
@@ -19,7 +21,6 @@ const isVisible = () => {
 function Sidebar() {
   const [channel, setChannel] = useState<null | actionCable.Channel>(null);
   const cableApp = actionCable.createConsumer('ws://localhost:3000/cable');
-
   useEffect(() => {
     if (null !== channel) channel.unsubscribe();
 
@@ -34,22 +35,16 @@ function Sidebar() {
             console.log("Yeeey :D")
             console.log(message);
           },
-          
+
         },
       ),
     );
   }, []);
 
   return (
-    <Navbar 
-      width={{ base: 230 }} 
-      withBorder={false} 
-      height="100%" 
-      bg="#0E111E" 
-      p="xs"
-      hidden={isVisible()}
-    >
-    </Navbar>
+      <>
+        
+    </>
   )
 }
 
